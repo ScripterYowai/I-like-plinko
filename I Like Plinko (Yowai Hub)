@@ -15,7 +15,7 @@ AutoFarmTab:AddToggle({
         infmoney = Value
         while infmoney do
             local args = {
-    [1] = 20000000000
+    [1] = 2000000000000000
 }
 
 game:GetService("ReplicatedStorage").RemoteFunctions.ManageCash:InvokeServer(unpack(args))
