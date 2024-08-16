@@ -1,0 +1,26 @@
+-- Lib
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/script-by/Nx-Crazy-Dev/main/Source')))()
+
+-- Window
+local Window = OrionLib:MakeWindow({Name = "Yowai Hub", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+
+-- Main Tab
+local AutoFarmTab = Window:MakeTab({Name = "AutoFarms", Icon = "rbxassetid://4483345998", PremiumOnly = false})
+
+-- Toggel For InfMoney
+AutoFarmTab:AddToggle({
+    Name = "Inf Money",
+    Default = false,
+    Callback = function(Value)
+        infmoney = Value
+        while infmoney do
+            local args = {
+    [1] = 20000000000
+}
+
+game:GetService("ReplicatedStorage").RemoteFunctions.ManageCash:InvokeServer(unpack(args))
+
+            wait()
+        end
+    end    
+})
